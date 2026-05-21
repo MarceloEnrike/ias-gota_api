@@ -62,7 +62,8 @@ def delete_marca(marca_id):
 # Home
 @app.route("/")
 def home():
-    return "API de motos 🏍️ funcionando correctamente"
+    #return "API de motos 🏍️ funcionando correctamente"
+    return "Hola API de motos modificada"
 
 if __name__ == "__main__":
     app.run(debug=True)

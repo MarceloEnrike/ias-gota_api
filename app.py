@@ -20,9 +20,21 @@ def motos():
     return jsonify({"status": "Ok"})
 
 # GET - listar marcas
+#@app.route("/marcas", methods=["GET"])
+#def get_marcas():
+#forzamos un error de codigo
+    #return jsonify(motos())
+#    return jsonify(marcas)
+
 @app.route("/marcas", methods=["GET"])
 def get_marcas():
-    return jsonify(marcas)
+    raise Exception("Error intencional para test")
+
+def test_get_marcas():
+    client = app.test_client()
+    response = client.get("/marcas")
+
+    assert response.status_code == 200
 
 # POST - crear marca
 @app.route("/marcas", methods=["POST"])
